@@ -8,6 +8,8 @@ from rest_framework.response import Response
 
 from PIL import Image
 
+# import Artist
+
 @api_view(('GET',))
 def index(request):
 	return Response('Hello world!')
@@ -27,13 +29,16 @@ def create_artwork(request):
 			raise ParseError("Empty content")
 
 		f = request.data['file']
+		file_bytes = f.read()
+
+		print("type:")
+		print(type(f))
 
 		try:
 			img = Image.open(f)
 			img.verify()
 		except:
 			raise ParseError("Unsupported image type")
-
 
 
 		template = loader.get_template('index.html')
