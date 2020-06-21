@@ -18,18 +18,20 @@ def index(request):
 @api_view(('GET', 'POST',))
 def create_artwork(request):
 
-	if request.method == 'GET':
-		template = loader.get_template('index.html')
-		context = {}
-		return HttpResponse(template.render(context, request))
-
 	if request.method == 'POST':
 
 		if 'file' not in request.data:
 			raise ParseError("Empty content")
 
+		print("request.data")
+		print(request.data)
+
+
 		f = request.data['file']
 		file_bytes = f.read()
+
+		print("file")
+		print(f)
 
 		try:
 			pil_image = Image.open(f)
@@ -41,4 +43,7 @@ def create_artwork(request):
 
 		return HttpResponse(new_artwork, content_type="image/jpeg")
 
-
+	if request.method == 'GET':
+		template = loader.get_template('index.html')
+		context = {}
+		return HttpResponse(template.render(context, request))

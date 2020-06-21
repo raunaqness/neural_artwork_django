@@ -7,5 +7,6 @@ urlpatterns = [
 
     path('', index),
     path('create_artwork', create_artwork),
+    path('gg', create_artwork),
 ]
 

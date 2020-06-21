@@ -25,7 +25,7 @@ SECRET_KEY = 'pgp(p#ftb11r&tbnzo!uv(z!s2)%ssu60z*8h30-q8lvb@zy^@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
