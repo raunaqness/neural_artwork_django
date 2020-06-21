@@ -6,6 +6,6 @@ from api.views import index, create_artwork
 urlpatterns = [
 
     path('', index),
-    path('artwork', create_artwork),
+    path('create_artwork', create_artwork),
 ]
 

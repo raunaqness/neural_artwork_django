@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.exceptions import ParseError
@@ -8,7 +8,7 @@ from rest_framework.response import Response
 
 from PIL import Image
 
-# import Artist
+from utils.Artist import Artist
 
 @api_view(('GET',))
 def index(request):
@@ -31,18 +31,14 @@ def create_artwork(request):
 		f = request.data['file']
 		file_bytes = f.read()
 
-		print("type:")
-		print(type(f))
-
 		try:
-			img = Image.open(f)
-			img.verify()
+			pil_image = Image.open(f)
+			pil_image.verify()
 		except:
 			raise ParseError("Unsupported image type")
 
+		new_artwork = Artist().create_artwork(Image.open(f), "starry_night")
 
-		template = loader.get_template('index.html')
-		context = {}
-		return HttpResponse(template.render(context, request))
+		return HttpResponse(new_artwork, content_type="image/jpeg")
 
 
