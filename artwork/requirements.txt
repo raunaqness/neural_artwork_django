@@ -1,9 +1,9 @@
+opencv-python
 asgiref==3.2.10
 Django==3.0.6
 djangorestframework==3.11.0
-numpy==1.18.5
-opencv-python==4.2.0.34
-Pillow==7.1.2
+numpy
+Pillow
 pytz==2020.1
-scipy==1.1.0
+scipy
 sqlparse==0.3.1
