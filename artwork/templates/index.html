@@ -10,8 +10,8 @@
   <div class="row">
     <div class="col-xl">
       <center>
-      <a href="/"><h1>Shrink-itt </h1> </a> 
-      A simple URL Shortner Service Made with Django made by <a href="https://raunaqness.in">Raunaq</a>. 
+      <a href="/"><h1>Neural Style Transfer</h1> </a> 
+      Turn your portrait into a painting! Made by <a href="https://raunaqness.in">Raunaq</a>. 
       </center>
       <br>
     </div>
@@ -20,16 +20,15 @@
   
       <br>
       <center>
-      <h4>Enter Long URL</h4>
+      <h4>Upload Image</h4>
    
 
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
     <form action="/api/v1/create_artwork" method="post" enctype="multipart/form-data" id="mainForm">
       {% csrf_token %}
-      <input type="text" name="long_url" min-width="48px" max-width="100px"><br/><br/>
       <input type="file" name="file">
-      <input type="submit" value="Shrink it!" />
+      <input type="submit" value="Paint me!" />
     </form>
 
     
