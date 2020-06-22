@@ -23,15 +23,8 @@ def create_artwork(request):
 		if 'file' not in request.data:
 			raise ParseError("Empty content")
 
-		print("request.data")
-		print(request.data)
-
-
 		f = request.data['file']
 		file_bytes = f.read()
-
-		print("file")
-		print(f)
 
 		try:
 			pil_image = Image.open(f)
