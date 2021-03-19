@@ -1,7 +1,7 @@
 opencv-python
 asgiref==3.2.10
 Django==3.0.6
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 numpy
 Pillow
 pytz==2020.1
