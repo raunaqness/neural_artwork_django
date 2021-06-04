@@ -1,6 +1,6 @@
 opencv-python
 asgiref==3.2.10
-Django==3.0.6
+Django==3.1.9
 djangorestframework==3.11.0
 numpy
 Pillow
